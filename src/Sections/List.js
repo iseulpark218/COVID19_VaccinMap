@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+// import style from "../Styles/List.css"
 
 export default function List({
   allDatas,
@@ -19,14 +20,16 @@ export default function List({
               setfocusedCenter({
                 id: center.id,
                 center: { lat: Number(center.lng), lng: Number(center.lat) },
-                zoom: 10,
+                // zoom: 10,
+                zoom: 13,
               })
             }
             onMouseEnter={() =>
               setfocusedCenter({
                 id: center.id,
                 center: basicCenter,
-                zoom: 7.5,
+                // zoom: 7.5,
+                zoom: 10.5,
               })
             }
             onMouseLeave={() =>
@@ -44,7 +47,7 @@ export default function List({
             <FacilityName isHovered={isHovered}>
               {center.facilityName}
             </FacilityName>
-            <Address isHovered={isHovered}>위치: {center.address}</Address>
+            <Address isHovered={isHovered}>주소: {center.address}</Address>
             {pdfBtn}
           </ListWrap>
         );
@@ -58,10 +61,10 @@ export default function List({
 // height: inherit;
 
 const ListWrapper = styled.article`
-width:500px;
+  width:600px;
   height: inherit;
   overflow: auto;
- 
+
 `;
 
 const ListWrap = styled.section`
@@ -69,8 +72,7 @@ const ListWrap = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 90px;
-  // padding: 30px 30px;
+  height: 85px;
   padding: 15px 30px;
   border-top: 1px solid lightgrey;
   &:first-child {
@@ -78,19 +80,20 @@ const ListWrap = styled.section`
   }
   cursor: pointer;
   &:hover {
-    box-shadow: 5px 4px 34px -10px grey;
+    box-shadow: 5px 5px 30px -10px black;
   }
 `;
 
 const NameTypeWrap = styled.div`
   display: flex;
   align-items: center;
+  
 `;
 
 const CenterName = styled.div`
-  color: ${props => (props.isHovered ? "#0a6da6" : "#414141")};
+  color: ${props => (props.isHovered ? "darkblue" : "black")};
   font-size: 18px;
-  font-weight: bold;
+  // font-weight: bold;
 `;
 
 const CenterType = styled.div`

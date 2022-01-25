@@ -6,6 +6,7 @@ import Pdf from "react-to-pdf";
 import { Download } from "@styled-icons/bootstrap/Download";
 
 export default function Main() {
+
   const [allDatas, setAllDatas] = useState();
   const [focusedCenter, setfocusedCenter] = useState({
     id: 0,
@@ -15,7 +16,7 @@ export default function Main() {
 
   useEffect(() => {
     fetch(
-      "https://api.odcloud.kr/api/15077586/v1/centers?page=1&perPage=10&serviceKey=rPjR1k5RX59RTpH3qcOa%2BH8aYFP%2BDRhMTvcdOm1j4Zi7ovY2nYj0wngbU7GangJsLpH3xHAlBn8Jdx50qZRKKw%3D%3D"
+      "https://api.odcloud.kr/api/15077586/v1/centers?page=1&perPage=100&serviceKey=IfcuH7lGQKchQgb97KnrXaH73w3PuD6Rwg295YWGvEmkvYlEfw7xdCtU%2FFnPZ0ju0BamQKp2YjoxiIzV96MXSw%3D%3D"
     )
       .then(res => res.json())
       .then(res => setAllDatas(res.data));
@@ -25,7 +26,7 @@ export default function Main() {
   const options = {
     orientation: "landscape",
     format: "a3",
-  };
+  }; 
 
   const pdfBtn = (
     <Pdf
@@ -40,8 +41,8 @@ export default function Main() {
   return (
     <MainWrap ref={ref}>
       <Header>
-        <Logo src="https://cdn.icon-icons.com/icons2/635/PNG/512/syringe-5_icon-icons.com_58820.png"
-        />
+        {/* <Logo src="https://cdn.icon-icons.com/icons2/635/PNG/512/syringe-5_icon-icons.com_58820.png"
+        /> */}
         &nbsp;코로나19 백신 접종 기관 조회
       </Header>
       <ListGoogleMapWrap>
@@ -66,10 +67,15 @@ const Header = styled.header`
   justify-content: center;
   align-items: center;
   height: 70px;
-  font-size: 30px;
+  background-color : darkblue;
+  color : white;
+  font-size: 33px;
   font-weight: 550;
   letter-spacing: 2px;
-  box-shadow: 5px -10px 71px -10px black;
+  // box-shadow: 5px -10px 71px -10px black;
+  font-family: 'Jua', sans-serif;
+  border-bottom: double 5px black
+  
 `;
 
 const ListGoogleMapWrap = styled.main`
@@ -86,7 +92,8 @@ const Logo = styled.img`
 
 const DownloadIcon = styled(Download)`
   position: absolute;
-  width: 20px;
+  width: 17px;
   right: 20px;
   bottom: 20px;
+  color : darkblue;
 `;

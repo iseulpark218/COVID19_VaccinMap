@@ -9,9 +9,11 @@ const GlobalStyle = createGlobalStyle`
   padding: 0;
   box-sizing: border-box;
   // color: #414141;
+  // font-family: 'Noto Sans KR', sans-serif;
+  font-family: 'Jua', sans-serif;
 }
 body {
-  font-family: 'Noto Sans KR', sans-serif;
+  // font-family: 'Noto Sans KR', sans-serif;
   font-family: 'Jua', sans-serif;
   line-height: 1;
 }
