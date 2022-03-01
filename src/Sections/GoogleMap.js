@@ -8,9 +8,9 @@ export default function GoogleMap(props) {
   return (
     <GoogleMapWrap>
       <GoogleMapReact
-        // bootstrapURLKeys={{ key: "AIzaSyDI04mQwT6Tr7K1G00cEJlU1D4uGAffpKA" }}
-        bootstrapURLKeys={{ key: process.env.REACT_APP_GOOGLE_API_KEY }}
-        defaultCenter={{ lat: 36.5, lng: 128 }}
+        bootstrapURLKeys={{ key: "AIzaSyDI04mQwT6Tr7K1G00cEJlU1D4uGAffpKA" }}
+        // bootstrapURLKeys={{ key: process.env.REACT_APP_GOOGLE_API_KEY }}
+        defaultCenter={{ lat: 36.5, lng: 127.5 }}
         defaultZoom={7.5}
         center={focusedCenter?.center}
         zoom={focusedCenter?.zoom}
@@ -24,6 +24,7 @@ export default function GoogleMap(props) {
             />
           );
         })}
+            <div onclick={console.log("checking marker")}></div>
       </GoogleMapReact>
     </GoogleMapWrap>
   );
@@ -41,10 +42,20 @@ const Marker = styled.div`
   height: 30px;
   border: 1px solid white;
   border-radius: 50% 50% 50% 0;
-  background: ${props => (props.isHovered ? "#D4293F" : "#00cae9")};
+  background: ${props => (props.isHovered ? "red" : "blue")};
   transform: rotate(-45deg);
   z-index: ${props => (props.isHovered ? 1 : 0)};
-  &:hover {
-    z-index: 1;
-  }
+`
+
+ const CustomMarker = styled.text`
+background: white;
+      color: black;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 15px;
+      box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      width: 70px;
+      height: 30px;
+      font-size: 15px;
 `;
