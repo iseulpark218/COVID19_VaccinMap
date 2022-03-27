@@ -14,9 +14,29 @@
       href="https://fonts.googleapis.com/css2?family=Jua&display=swap"
       rel="stylesheet"
     />
+
     <title>코로나19 백신 접종 기관 조회</title>
   </head>
   <body>
     <div id="root"></div>
+    <script>
+      let map;
+      function initMap() {
+        let cityHall = { lat: 37.566554, lng: 126.978546 };
+
+        let defaultOptions = {
+          zoom: 12,
+          center: cityHall,
+          disableDefaultUI: true,
+          zoomControl: true,
+        };
+        map = new google.maps.Map(
+          document.getElementById("map"),
+          defaultOptions
+        );
+
+        let marker = new google.maps.Marker({ position: cityHall, map: map });
+      }
+    </script>
   </body>
 </html>

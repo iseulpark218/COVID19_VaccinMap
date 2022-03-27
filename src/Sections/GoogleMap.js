@@ -8,8 +8,8 @@ export default function GoogleMap(props) {
   return (
     <GoogleMapWrap>
       <GoogleMapReact
-        bootstrapURLKeys={{ key: "AIzaSyDI04mQwT6Tr7K1G00cEJlU1D4uGAffpKA" }}
-        // bootstrapURLKeys={{ key: process.env.REACT_APP_GOOGLE_API_KEY }}
+        // bootstrapURLKeys={{ key: "AIzaSyDI04mQwT6Tr7K1G00cEJlU1D4uGAffpKA" }}
+        bootstrapURLKeys={{ key: process.env.REACT_APP_GOOGLE_API_KEY }}
         defaultCenter={{ lat: 36.5, lng: 127.5 }}
         defaultZoom={7.5}
         center={focusedCenter?.center}
