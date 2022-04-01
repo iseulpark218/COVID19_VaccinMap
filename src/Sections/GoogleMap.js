@@ -24,7 +24,7 @@ export default function GoogleMap(props) {
             />
           );
         })}
-            <div onclick={console.log("checking marker")}></div>
+            <div onclick={console.log("hover : marker")}></div>
       </GoogleMapReact>
     </GoogleMapWrap>
   );
@@ -45,17 +45,20 @@ const Marker = styled.div`
   background: ${props => (props.isHovered ? "red" : "blue")};
   transform: rotate(-45deg);
   z-index: ${props => (props.isHovered ? 1 : 0)};
+  &:hover {
+    z-index: 1;
+  }
 `
 
- const CustomMarker = styled.text`
-background: white;
-      color: black;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 15px;
-      box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-      width: 70px;
-      height: 30px;
-      font-size: 15px;
-`;
+//  const CustomMarker = styled.text`
+// background: white;
+//       color: black;
+//       display: flex;
+//       align-items: center;
+//       justify-content: center;
+//       border-radius: 15px;
+//       box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+//       width: 70px;
+//       height: 30px;
+//       font-size: 15px;
+// `;

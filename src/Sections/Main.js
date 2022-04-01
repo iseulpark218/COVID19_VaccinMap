@@ -52,12 +52,8 @@ export default function Main() {
   return (
     <MainWrap ref={ref}>
       <Header>
-        {/* <Logo src="https://cdn.icon-icons.com/icons2/635/PNG/512/syringe-5_icon-icons.com_58820.png"
-        /> */}
         코로나19 백신 접종 기관 조회
-        {/* 임시 */}
-        {/* <a href="/temporary">❤</a> */}
-      </Header>
+             </Header>
       <ListGoogleMapWrap>
         <List
           allDatas={allDatas}
@@ -86,7 +82,7 @@ const Header = styled.header`
   font-weight: 550;
   letter-spacing: 2px;
   // box-shadow: 5px -10px 71px -10px black;
-  font-family: 'Jua', sans-serif;
+  font-family: 'GmarketSansMedium';
   border-bottom: double 5px black
   
 `;
